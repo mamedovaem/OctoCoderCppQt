@@ -6,18 +6,18 @@ using namespace std;
 class Girl;
 
 class Memento {
-    Memento(string param1, string param2, string param3) {
+    Memento(string clr1, string clr2, string clr3) {
 
-        ELC = param1;
-        LC = param2;
-        NC = param3;
+        Eyelashes = clr1;
+        Lips = clr2;
+        Nails = clr3;
     }
 
 private:
     friend class Girl;
-    string ELC;
-    string LC;
-    string NC;
+    string Eyelashes;
+    string Lips;
+    string Nails;
 };
 
 class Girl {
@@ -63,9 +63,9 @@ public:
 
     void GetStateFromMemento() {
         if(SaveState) {
-        EyelashesColour = SaveState->ELC;
-        LipsColour = SaveState->LC;
-        NailsColour = SaveState->NC;
+        EyelashesColour = SaveState->Eyelashes;
+        LipsColour = SaveState->Lips;
+        NailsColour = SaveState->Nails;
       }
         else cout << "Cannot restore previous state." << endl;
     }
@@ -79,10 +79,6 @@ private:
 
 
 };
-
-
-
-
 
 int main()
 {
